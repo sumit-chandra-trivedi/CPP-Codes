@@ -1,0 +1,1 @@
+// a = b = c;  //Here first attributes of c will be copied to b and then attributes of b will be copied to a 
