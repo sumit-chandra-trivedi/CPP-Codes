@@ -1,0 +1,2 @@
+cout<< pop(sp)<<endl;
+  

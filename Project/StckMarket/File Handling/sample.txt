@@ -1,0 +1,3 @@
+Hello I am writing in this file to learn file handling in C++.
+Writing data to file is so simple.
+Adding more content to the file using file handling.
