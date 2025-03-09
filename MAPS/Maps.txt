@@ -1,0 +1,54 @@
+Map :
+
+It stores elements in sorted order by thhe keys
+map[1] = 2 ==>[] operator overwrites the value
+map.emplace({1,2}) ==> will not overwrite if the key already exists
+map.insert({3,4}) ===> inserting with insert() does not overwrite an existing key. If you try to insert a key that already exists, the insert() function fails for that key, and the existing value remains
+map[{4,5}] = 10 ==> map<pair<int,int>, int>
+
+1. Modifiers (Insert, Update, Erase)
+
+Function									Description
+insert(pair)								Inserts a new key-value pair (does not overwrite existing keys).
+emplace(args...)							Constructs and inserts a new element directly in place (avoids extra copy/move operations).
+operator[] (key)							Accesses or inserts a key-value pair; if key doesn’t exist, creates a default entry.
+at(key)										Returns reference to the value of the given key (throws exception if key doesn’t exist).
+erase(key)									Removes a key-value pair by key.
+erase(iterator)								Removes element at a specific iterator position.
+clear()										Removes all elements from the map.
+swap(map2)									Swaps contents with another map.
+merge(map2)									Moves elements from another map, only adding non-duplicate keys.
+
+
+2. Lookup & Access
+Function									Description
+find(key)									Returns iterator to the element if found, else returns map.end().
+count(key)									Returns 1 if the key exists, 0 otherwise (useful for checking existence).
+contains(key) (C++20)						Returns true if key exists, false otherwise (more readable than count).
+equal_range(key)							Returns a pair of iterators representing the range of elements matching key (always one or zero for map).
+lower_bound(key)							Returns iterator to the first element not less than key.
+upper_bound(key)							Returns iterator to the first element greater than key.
+
+
+3. Iterators
+Function									Description
+begin()										Returns iterator to the first element.
+end()										Returns iterator past the last element.
+rbegin()									Returns reverse iterator to the last element.
+rend()										Returns reverse iterator past the first element.
+cbegin(), cend()							Returns constant iterators (const_iterator).
+crbegin(), crend()							Returns constant reverse iterators (const_reverse_iterator).
+
+
+4. Capacity
+Function									Description
+empty()										Returns true if map is empty, false otherwise.
+size()										Returns the number of elements in the map.
+max_size()									Returns the maximum number of elements the map can hold.
+
+
+5. Observers
+Function									Description
+key_comp()									Returns function object to compare keys.
+value_comp()								Returns function object to compare values.
+
